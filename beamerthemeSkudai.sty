@@ -1,0 +1,49 @@
+% Skudai (Universiti Teknologi Malaysia) presentation theme for beamer
+%
+% LIM Lian Tze <liantze@gmail.com>, 2011
+% http://liantze.penguinattack.org/latextypesetting
+%
+% Changelog:
+%
+% Version 1.0:
+%   First public version.
+
+\ProvidesPackage{beamerthemeSkudai}[2011/09/20]
+
+\pgfdeclareimage[width=\paperwidth]{footer}{footer}
+\pgfdeclareimage[width=.12\paperwidth]{small-logo}{UTM-logo}
+\pgfdeclareimage[width=.25\paperwidth]{large-logo}{UTM-logo}
+
+\definecolor{UTMRed}{RGB}{112,12,41}
+\definecolor{UTMGold}{RGB}{249,199,77}
+\definecolor{UTMYellow}{RGB}{254,230,184}
+\setbeamercolor{background canvas}{bg=UTMYellow}
+\usecolortheme[named=UTMRed]{structure}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{%
+\pgftext[at=\pgfpoint{15pt}{-8pt},left,top]{\pgfuseimage{small-logo}}%
+}
+\setbeamertemplate{footline}{%
+\hfill\usebeamercolor[fg]{structure}\insertframenumber\hspace*{10pt}\strut\vskip0pt%
+\pgfuseimage{footer}%
+}
+\setbeamertemplate{frametitle}[default][center]
+\addtobeamertemplate{frametitle}{\vskip12pt}{}
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamerfont{title}{series=\bfseries}
+
+\setbeamertemplate{itemize items}[circle]
+
+\addtobeamertemplate{title page}{%
+\begin{pgfpicture}
+\pgf@relevantforpicturesizefalse
+\pgftransformxshift{-\Gm@lmargin}
+\pgftransformyshift{25pt}
+\pgfpathrectanglecorners{\pgfpoint{0pt}{0pt}}{\pgfpoint{\paperwidth}{-.25\paperheight}}
+\pgfsetfillcolor{UTMGold}
+\pgfusepath{fill}
+\pgftext[at=\pgfpoint{.5\paperwidth}{-.23\paperheight},center,bottom]{\pgfuseimage{large-logo}}
+\end{pgfpicture}%
+\vskip36pt%
+}{}
